@@ -16,7 +16,10 @@ resources:
       configuration:
         catalogo: ${var.catalog}
         schema_bronze: ${resources.schemas.bronze.name}
+        schema_silver: ${resources.schemas.silver.name}
+        schema_gold: ${resources.schemas.gold.name}
         volume_landing: /Volumes/${var.catalog}/${resources.schemas.raw.name}/${resources.volumes.landing.name}
+        duracao_minima_interrupcao_min: '3.0'
 
       continuous: false
       development: true
