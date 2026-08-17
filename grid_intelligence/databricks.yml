@@ -17,6 +17,9 @@ artifacts:
 variables:
   catalog:
     description: The catalog to use
+  warehouse_id:
+    description: SQL Warehouse ID for dashboards
+    default: "c2d015b31194d84d"
 
 targets:
   dev:
@@ -26,6 +29,7 @@ targets:
       profile: grid_intelligence
     variables:
       catalog: grid_dev
+      warehouse_id: "c2d015b31194d84d"
   prod:
     mode: production
     workspace:
@@ -33,6 +37,7 @@ targets:
       root_path: /Workspace/Users/rodolfoxae@gmail.com/.bundle/${bundle.name}/${bundle.target}
     variables:
       catalog: grid_intelligence
+      warehouse_id: "c2d015b31194d84d"
     permissions:
       - user_name: rodolfoxae@gmail.com
         level: CAN_MANAGE

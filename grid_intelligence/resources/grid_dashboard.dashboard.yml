@@ -1,0 +1,8 @@
+resources:
+  dashboards:
+    grid_dashboard:
+      display_name: "Painel Operacional e Perdas Nao-Tecnicas - Grid Intelligence (${bundle.target})"
+      file_path: ../resources/grid_dashboard.json
+      warehouse_id: ${var.warehouse_id}
+      dataset_catalog: ${var.catalog}
+      dataset_schema: ${resources.schemas.gold.name}
