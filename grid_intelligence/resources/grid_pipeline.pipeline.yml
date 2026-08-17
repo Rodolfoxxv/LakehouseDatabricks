@@ -1,0 +1,22 @@
+resources:
+  pipelines:
+    grid_pipeline:
+      name: grid_intelligence_pipeline_${bundle.target}
+      catalog: ${var.catalog}
+      target: ${resources.schemas.bronze.name}
+
+      libraries:
+        - glob:
+            include: ../src/pipelines/grid_intelligence/transformations/**
+
+      root_path: ../src/pipelines/grid_intelligence
+
+      serverless: true
+
+      configuration:
+        catalogo: ${var.catalog}
+        schema_bronze: ${resources.schemas.bronze.name}
+        volume_landing: /Volumes/${var.catalog}/${resources.schemas.raw.name}/${resources.volumes.landing.name}
+
+      continuous: false
+      development: true
